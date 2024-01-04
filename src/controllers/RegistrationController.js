@@ -3,12 +3,12 @@ const Crypto = require('crypto')
 
 module.exports = {
   async index(req,res) {
-  try {
-    const { data } = await axios.get(`${process.env.BASE_API_URL}/registrations`);
-    return res.json(data);
-  } catch (error) {
-    return res.json(data, 500);  
-  }
+    try {
+      const { data } = await axios.get(`${process.env.BASE_API_URL}/registrations`);
+      return res.json(data);
+    } catch (error) {
+      return res.json(data, 500);  
+    }
   },
   async store(req,res){
     const body = req.body;
